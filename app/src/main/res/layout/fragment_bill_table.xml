@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:segmentedgroup="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_settle_statistics_panel"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_larger"
+            android:layout_centerInParent="true"
+            android:text="账目表"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="5dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_refresh"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="时间"
+            android:paddingLeft="7dp"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收入(元)"
+            android:paddingRight="12dp"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:tr_pureScrollMode_on="true"
+        android:layout_marginTop="5dp">
+
+        <ListView
+            android:id="@+id/bill_table_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_bill_table"
+            android:clipToPadding="false"
+            android:divider="#6e768c"
+            android:dividerHeight="1px"
+            android:overScrollMode="never"/>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="8dp">
+
+        <RadioButton
+            android:id="@+id/radio_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="按日期"
+            style="@style/RadioButton" />
+
+        <RadioButton
+            android:id="@+id/radio_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按月份"
+            style="@style/RadioButton" />
+
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+</LinearLayout>

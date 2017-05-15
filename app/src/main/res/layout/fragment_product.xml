@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_product"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_category_name"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:gravity="center"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/font_normal" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_product_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.KeWuYou.EditText"
+                android:layout_marginLeft="@dimen/spacing_minor"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/ic_search_gray"
+                android:layout_marginRight="@dimen/spacing_minor"
+                android:textSize="@dimen/font_normal"
+                android:imeOptions="actionDone"
+                android:hint="请输入菜名、编号搜索"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/product_loading_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_centerInParent="true"
+                app:indicatorName="LineScaleIndicator"
+                app:indicatorColor="@color/red" />
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tr_pureScrollMode_on="true">
+
+                <GridView
+                    android:id="@+id/product_grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:cacheColorHint="@color/transparent"
+                    android:numColumns="2"
+                    android:listSelector="@color/transparent"
+                    android:horizontalSpacing="13dp"
+                    android:verticalSpacing="30dp"
+                    android:paddingRight="14dp"
+                    android:scrollbars="vertical"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:overScrollMode="never"/>
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_cate_list">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/category_loading_view"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_centerInParent="true"
+            app:indicatorName="LineScaleIndicator"
+            app:indicatorColor="@color/red" />
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tr_pureScrollMode_on="true">
+
+            <ListView
+                android:id="@+id/category_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/spacing_micro"
+                android:paddingRight="@dimen/spacing_micro"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="outsideOverlay"/>
+
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

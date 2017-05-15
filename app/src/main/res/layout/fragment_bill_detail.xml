@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_major">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账单查询"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_large"/>
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_bill_search"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/ic_search_white"
+            android:drawablePadding="@dimen/spacing_minor"
+            android:paddingLeft="@dimen/spacing_minor"
+            android:paddingRight="@dimen/spacing_minor"
+            android:layout_marginLeft="@dimen/spacing_minor"
+            android:layout_marginRight="@dimen/spacing_minor"
+            android:hint="搜索订单号、桌号"
+            android:textColorHint="#626C86"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal"
+            android:background="@drawable/bg_search1"/>
+        
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="5dp"
+            android:src="@mipmap/ic_refresh"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="15dp"
+        android:background="#6e768c"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_minor"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日期"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_large"/>
+        
+        <TextView
+            android:id="@+id/bill_date_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="@dimen/spacing_major"
+            android:text="2017/05/02"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_large"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_bill_date_spinner"
+            android:drawableRight="@mipmap/ic_spinner_arrow"
+            android:drawablePadding="@dimen/spacing_minor"/>
+
+        <TextView
+            android:id="@+id/tv_order_sum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal"
+            android:layout_marginLeft="@dimen/spacing_major"
+            android:text="总共 0 单"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_print"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="打印"
+            android:textSize="@dimen/font_normal"
+            style="@style/Widget.KeWuYou.Button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="现金:0元"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="移动支付:0元"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="银行卡:0元"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="会员余额:0元"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="挂账:0元"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="优惠:0元"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:tr_pureScrollMode_on="true">
+
+        <GridView
+            android:id="@+id/bill_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:layout_marginTop="@dimen/spacing_micro"
+            android:paddingTop="@dimen/spacing_minor"
+            android:horizontalSpacing="@dimen/spacing_micro"
+            android:verticalSpacing="@dimen/spacing_micro"
+            android:clipToPadding="false"/>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+</LinearLayout>

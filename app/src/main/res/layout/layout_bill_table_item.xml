@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="31dp">
+
+    <TextView
+        android:id="@+id/tv_bill_table_time"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/font_small"
+        android:gravity="center_vertical"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:background="@drawable/bg_item_bill_table"
+        android:textColor="@color/white"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/tv_bill_table_price"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textSize="@dimen/font_small"
+        android:gravity="center_vertical|right"
+        android:textColor="@color/white"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_gravity="center_vertical"
+        android:singleLine="true"/>
+
+</LinearLayout>

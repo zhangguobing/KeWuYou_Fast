@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <cn.bingoogolapple.badgeview.BGABadgeFrameLayout
+        android:id="@+id/badge_view"
+        app:badge_gravity="rightBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:badge_textSize="@dimen/font_smaller"
+        app:badge_padding="@dimen/spacing_micro">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_micro">
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/spacing_micro"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"/>
+
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_product_name"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"/>
+
+            <TextView
+                android:id="@+id/tv_product_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_product_name"
+                android:textColor="@color/red"
+                android:textSize="@dimen/font_smaller"
+                android:layout_marginTop="@dimen/spacing_micro"/>
+        </RelativeLayout>
+    </cn.bingoogolapple.badgeview.BGABadgeFrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/badge_view"
+        android:layout_marginTop="1dp"
+        android:background="@color/divider" />
+</RelativeLayout>

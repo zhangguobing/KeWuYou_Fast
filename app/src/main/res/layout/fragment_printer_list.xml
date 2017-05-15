@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_minor"
+        android:background="@drawable/bg_white_round_corner"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_printer_setting_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/spacing_minor"
+            android:text="打印机设置"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_large" />
+
+        <com.weiwoju.kewuyou.widget.MultiStateView
+            android:id="@+id/multi_state_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tr_pureScrollMode_on="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/printer_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </com.weiwoju.kewuyou.widget.MultiStateView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white_round_corner">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="规格选择"
+        android:textSize="20sp" />
+
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        app:tr_pureScrollMode_on="true">
+
+        <com.weiwoju.kewuyou.widget.flowlayout.TagFlowLayout
+            android:id="@+id/flowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="13dp"
+            app:max_select="1"/>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="13dp">
+
+
+        <LinearLayout
+            android:id="@+id/edit_num_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数量:"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/font_normal"/>
+
+            <com.weiwoju.kewuyou.widget.ShoppingCountView
+                android:id="@+id/shopping_count_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_num"
+                app:scv_add_btn_bg_color="@color/blue"
+                app:scv_add_btn_text_color="@color/white"
+                app:scv_minus_btn_bg_color="@color/white"
+                app:scv_minus_btn_text_color="@color/red"
+                app:scv_text_size="@dimen/font_normal"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/Widget.KeWuYou.Button"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="确定" />
+
+    </RelativeLayout>
+
+</LinearLayout>

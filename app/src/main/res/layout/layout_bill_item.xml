@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@drawable/item_bill_selector">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_major"
+        android:layout_marginRight="@dimen/spacing_major"
+        android:padding="@dimen/spacing_micro"
+        android:background="@drawable/bg_item_bill_inner">
+
+        <TextView
+            android:id="@+id/tv_gua"
+            android:text="挂"
+            android:textSize="@dimen/font_smaller"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/bg_gua"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/tv_fan"
+            android:text="反"
+            android:textSize="@dimen/font_smaller"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_fan"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/tv_gua"/>
+
+        <TextView
+            android:id="@+id/tv_bill_table_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fan"
+            android:text="1号桌"
+            android:textColor="@color/red"
+            android:singleLine="true"
+            android:layout_marginTop="6dp"
+            android:textSize="@dimen/font_normal"/>
+
+        <TextView
+            android:id="@+id/tv_bill_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16:58"
+            android:textColor="#FF7200"
+            android:textSize="@dimen/font_small"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@id/tv_bill_table_name"/>
+
+        <TextView
+            android:id="@+id/tv_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_bill_table_name"
+            android:layout_marginTop="4dp"
+            android:text="账单"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tv_bill_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_bill"
+            android:layout_marginTop="4dp"
+            android:text="12:00"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textSize="@dimen/font_normal" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_bill_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="No.1"
+        android:textColor="@color/white"
+        android:singleLine="true"
+        android:textSize="@dimen/font_larger" />
+
+</LinearLayout>
